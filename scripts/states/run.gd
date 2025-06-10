@@ -9,7 +9,7 @@ func process_input(event: InputEvent) -> State:
 		return jump_state
 	return null
 
-func process_physics(delta: float) -> State:
+func process_physics(_delta: float) -> State:
 	var move_dir: float = Input.get_axis("move_left", "move_right")
 	if move_dir == 0:
 		return idle_state

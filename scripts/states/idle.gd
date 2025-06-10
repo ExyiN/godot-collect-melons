@@ -11,7 +11,7 @@ func process_input(event: InputEvent) -> State:
 		return run_state
 	return null
 	
-func process_physics(delta: float) -> State:
+func process_physics(_delta: float) -> State:
 	if !parent.is_on_floor():
 		return fall_state
 	return null
