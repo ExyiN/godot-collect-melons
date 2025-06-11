@@ -11,9 +11,10 @@ func process_input(event: InputEvent) -> State:
 
 func process_physics(_delta: float) -> State:
 	var move_dir: float = Input.get_axis("move_left", "move_right")
-	if move_dir == 0:
+	if move_dir == 0 and (Input.is_action_just_released("move_left") or Input.is_action_just_released("move_right")):
 		return idle_state
-	parent.animations.flip_h = move_dir == -1
+	if move_dir != 0:
+		parent.animations.flip_h = move_dir == -1
 	parent.velocity.x = move_dir * parent.speed
 	parent.move_and_slide()
 	
