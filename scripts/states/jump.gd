@@ -2,22 +2,16 @@ extends State
 
 @export var fall_state: State
 
-const MAX_JUMP_VELOCITY: float = -400.0
-@export var jump_start_velocity: float = -200.0
-@export var jump_velocity: float = -30.0
-@export var jump_gravity: float = 50.0
-var stop_jump: bool = false
+@export var jump_start_velocity: float = -600.0
+@export var jump_gravity: float = 20.0
 
 func enter() -> void:
 	super()
-	stop_jump = false
 	parent.velocity.y = jump_start_velocity
 	
 func process_physics(_delta: float) -> State:
-	if Input.is_action_just_released("jump") or parent.velocity.y <= MAX_JUMP_VELOCITY:
-		stop_jump = true
-	if Input.is_action_pressed("jump") and !stop_jump:
-		parent.velocity.y += jump_velocity
+	if Input.is_action_just_released("jump"):
+		parent.velocity.y /= 2
 	else:
 		parent.velocity.y += jump_gravity
 	if parent.velocity.y > 0:
