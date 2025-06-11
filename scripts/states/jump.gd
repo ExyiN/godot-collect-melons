@@ -1,7 +1,6 @@
 extends State
 
 @export var fall_state: State
-
 @export var jump_start_velocity: float = -600.0
 @export var jump_gravity: float = 20.0
 
