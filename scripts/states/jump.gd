@@ -12,8 +12,7 @@ func enter() -> void:
 func process_physics(_delta: float) -> State:
 	if Input.is_action_just_released("jump"):
 		parent.velocity.y /= 2
-	else:
-		parent.velocity.y += jump_gravity
+	parent.velocity.y += jump_gravity
 	if parent.velocity.y > 0:
 		return fall_state
 
