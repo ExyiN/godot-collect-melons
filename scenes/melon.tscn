@@ -181,7 +181,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hrpgp"]
 size = Vector2(18, 12)
 
-[node name="Melon" type="Area2D"]
+[node name="Melon" type="Area2D" groups=["melons"]]
 script = ExtResource("1_1xno5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

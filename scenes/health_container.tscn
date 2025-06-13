@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://dab2g13e0ltwp"]
+
+[ext_resource type="Script" uid="uid://rvje05rqi513" path="res://scripts/health_container.gd" id="1_o1ign"]
+[ext_resource type="PackedScene" uid="uid://c40mycw6dcyto" path="res://scenes/heart.tscn" id="2_qqaku"]
+
+[node name="HealthContainer" type="HBoxContainer"]
+script = ExtResource("1_o1ign")
+heart_scene = ExtResource("2_qqaku")

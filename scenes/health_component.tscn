@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://xad1c03idwgi"]
+
+[sub_resource type="GDScript" id="GDScript_qen68"]
+script/source = "extends Node2D
+
+signal zero_health()
+
+@export var MAX_HEALTH: int = 3
+
+var health: int
+
+func _ready() -> void:
+	health = MAX_HEALTH
+	
+func take_damage() -> void:
+	health -= 1
+	if health <= 0:
+		zero_health.emit()
+"
+
+[node name="HealthComponent" type="Node2D"]
+script = SubResource("GDScript_qen68")
