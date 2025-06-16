@@ -7,6 +7,7 @@ signal no_health()
 @export var dead_state: State
 
 @onready var animations: AnimatedSprite2D = $AnimatedSprite2D
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var state_machine: StateMachine = $StateMachine
 
 var speed: float = 200.0
@@ -28,3 +29,4 @@ func take_damage() -> void:
 	if current_health <= 0:
 		no_health.emit()
 		state_machine.change_state(dead_state)
+	animation_player.play("hit")
